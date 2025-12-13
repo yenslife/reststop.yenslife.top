@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {{- $siteTitle := .Site.Title -}}
+    {{- $description := (or .Description .Summary .Site.Params.description) | default "" | plainify | htmlUnescape | truncate 160 -}}
+    {{- $image := "" -}}
+    {{- with .Params.image -}}
+        {{- $imgParam := . -}}
+        {{- if or (hasPrefix $imgParam "http://") (hasPrefix $imgParam "https://") -}}
+            {{- $image = $imgParam -}}
+        {{- else if hasPrefix $imgParam "/" -}}
+            {{- $image = ($imgParam | absURL) -}}
+        {{- else -}}
+            {{- with $.Resources.GetMatch $imgParam -}}
+                {{- $image = .Permalink -}}
+            {{- else -}}
+                {{- $image = ($imgParam | absURL) -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+    {{- if not $image -}}
+        {{- with .Site.Params.ogImage -}}
+            {{- $ogParam := . -}}
+            {{- if or (hasPrefix $ogParam "http://") (hasPrefix $ogParam "https://") -}}
+                {{- $image = $ogParam -}}
+            {{- else -}}
+                {{- $image = ($ogParam | absURL) -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+
+    <title>{{ block "title" . }}{{ cond .IsHome .Site.Title (printf "%s | %s" .Title .Site.Title) }}{{ end }}</title>
+    {{- if $description }}
+    <meta name="description" content="{{ $description }}">
+    {{- end }}
+    <link rel="canonical" href="{{ .Permalink }}">
+
+    <meta property="og:site_name" content="{{ $siteTitle }}">
+    <meta property="og:title" content="{{ cond .IsHome .Site.Title (printf "%s | %s" .Title .Site.Title) }}">
+    {{- if $description }}
+    <meta property="og:description" content="{{ $description }}">
+    {{- end }}
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:type" content="{{ cond .IsHome "website" "article" }}">
+    {{- if $image }}
+    <meta property="og:image" content="{{ $image }}">
+    {{- end }}
+    {{- if not .IsHome }}
+    <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+    {{- end }}
+
+    <meta name="twitter:card" content="{{ cond (ne $image "") "summary_large_image" "summary" }}">
+    <meta name="twitter:title" content="{{ cond .IsHome .Site.Title (printf "%s | %s" .Title .Site.Title) }}">
+    {{- if $description }}
+    <meta name="twitter:description" content="{{ $description }}">
+    {{- end }}
+    {{- if $image }}
+    <meta name="twitter:image" content="{{ $image }}">
+    {{- end }}
+
+    {{ with .OutputFormats.Get "RSS" }}
+    <link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .RelPermalink }}">
+    {{ end }}
+
+    <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Open+Sans:wght@400;700&display=swap">
+    {{ hugo.Generator }}
+</head>
+<body>
+    {{ partial "header.html" . }}
+    <main class="container">
+        {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+    <script src="{{ "js/main.js" | absURL }}" defer></script>
+</body>
+</html>

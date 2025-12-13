@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="list-header">
+    <h1>所有主題</h1>
+</div>
+<div class="terms-list">
+    {{ range .Data.Terms.ByCount }}
+        <a class="term-item" href="{{ .Page.Permalink }}">
+            <span class="term-name">{{ .Page.Title }}</span>
+            <span class="term-count">{{ .Count }}</span>
+        </a>
+    {{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,15 @@
+{{ if gt .Paginator.TotalPages 1 }}
+<nav class="pagination">
+    {{ if .Paginator.HasPrev }}
+        <a class="pagination-item prev" href="{{ .Paginator.Prev.URL }}">← 上一頁</a>
+    {{ else }}
+        <span class="pagination-item prev disabled">← 上一頁</span>
+    {{ end }}
+    <span class="pagination-item page-info">第 {{ .Paginator.PageNumber }} 頁 / 共 {{ .Paginator.TotalPages }} 頁</span>
+    {{ if .Paginator.HasNext }}
+        <a class="pagination-item next" href="{{ .Paginator.Next.URL }}">下一頁 →</a>
+    {{ else }}
+        <span class="pagination-item next disabled">下一頁 →</span>
+    {{ end }}
+</nav>
+{{ end }}

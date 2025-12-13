@@ -1,0 +1,27 @@
+{{ define "main" }}
+    <div class="post-list">
+        {{ range .Paginator.Pages }}
+        <article class="post-item">
+            <h2 class="post-title">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h2>
+            <div class="post-meta">
+                <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006年1月2日" }}</time>
+                {{ with .Params.categories }}
+                <span class="post-cat">
+                    主題：
+                    {{ range . }}
+                        <a href="{{ "categories/" | absURL }}{{ . | urlize }}">{{ . }}</a>
+                    {{ end }}
+                </span>
+                {{ end }}
+            </div>
+            <div class="post-summary">
+                {{ .Summary }}
+            </div>
+            <a href="{{ .Permalink }}" class="read-more">繼續閱讀 &rarr;</a>
+        </article>
+        {{ end }}
+    </div>
+    {{ partial "pagination.html" . }}
+{{ end }}
