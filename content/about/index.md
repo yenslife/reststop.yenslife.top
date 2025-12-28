@@ -11,7 +11,7 @@ draft: false
 
 在這邊主要會分享一些不正經的東西，像是對生活的所見所聞所感、一些無聊的想法之類的。
 
-如果您對我或我的技術文章感興趣，也歡迎造訪其他網站：
+如果你對這個網站有興趣，歡迎追蹤 [RSS](https://reststop.yenslife.top/index.xml)。如果您對我或我的技術文章感興趣，也歡迎造訪其他網站：
 - [個人網站](https://yenslife.top)
 - [技術部落格](https://blog.yenslife.top)
 
