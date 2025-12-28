@@ -1,7 +1,7 @@
 {{ define "main" }}
     {{ partial "home_header.html" . }}
     <div class="post-list">
-        {{ range .Paginator.Pages }}
+        {{ range where .Paginator.Pages "Type" "posts" }}
         <article class="post-item">
             <h2 class="post-title">
                 <a href="{{ .Permalink }}">{{ .Title }}</a>

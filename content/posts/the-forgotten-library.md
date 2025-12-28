@@ -1,7 +1,7 @@
 ---
-title: "被遺忘的圖書館"
+title: "被遺忘的圖書館(測試文章)"
 date: 2025-09-15T11:00:00+08:00
-draft: ture
+draft: true
 categories: ["奇幻冒險"]
 ---
 
