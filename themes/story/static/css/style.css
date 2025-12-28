@@ -123,6 +123,26 @@ h3 { font-size: 1.5em; }
     text-decoration: none;
 }
 
+/* RSS 連結樣式 */
+.rss-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.rss-link:hover {
+    color: var(--link-hover-color);
+}
+
+.rss-link .icon-rss {
+    width: 24px;
+    height: 24px;
+    /* stroke: currentColor; */
+    display: block;
+}
+
 /* 日夜模式切換按鈕 */
 .theme-toggle {
     background: none;

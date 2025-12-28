@@ -1,7 +1,7 @@
 ---
 title: "星空下的約定"
 date: 2025-11-20T19:30:00+08:00
-draft: false
+draft: true
 author: "海狸大師"
 description: "兩個朋友在星空下許下一個永恆的約定。"
 categories: ["溫馨友情"]

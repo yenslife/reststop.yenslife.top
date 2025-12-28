@@ -1,7 +1,7 @@
 ---
 title: "森林深處的微光"
 date: 2025-12-13T10:00:00+08:00
-draft: false
+draft: true
 author: "海狸大師"
 description: "一個關於迷失與尋找，以及森林中微小希望的故事。"
 categories: ["奇幻冒險"]
