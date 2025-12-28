@@ -5,33 +5,33 @@
             <a href="{{ "/categories/" | relURL }}">主題</a>
             <a href="{{ "/about" | relURL }}">關於我</a>
         
-        <a href="{{ "/index.xml" | relURL }}" class="rss-link" aria-label="RSS 訂閱">
-        <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 20 20"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        role="img"
-        aria-label="RSS"
-        >
-        <!-- dot -->
-        <circle cx="5" cy="19" r="2" fill="currentColor" stroke="none" />
+            <a href="{{ "/index.xml" | relURL }}" class="rss-link" aria-label="RSS 訂閱">
+            <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            role="img"
+            aria-label="RSS"
+            >
+            <!-- dot -->
+            <circle cx="5" cy="19" r="2" fill="currentColor" stroke="none" />
 
-        <!-- arcs -->
-        <path d="M4 11a9 9 0 0 1 9 9" />
-        <path d="M4 4a16 16 0 0 1 16 16" />
-        </svg>
+            <!-- arcs -->
+            <path d="M4 11a9 9 0 0 1 9 9" />
+            <path d="M4 4a16 16 0 0 1 16 16" />
+            </svg>
+            </a>
 
-        </a>
+            <button id="theme-toggle" class="theme-toggle" aria-label="切換日間/夜間模式">
+                <span class="icon-sun">☀️</span>
+                <span class="icon-moon">🌙</span>
+            </button>
         </nav>
-        <button id="theme-toggle" class="theme-toggle" aria-label="切換日間/夜間模式">
-            <span class="icon-sun">☀️</span>
-            <span class="icon-moon">🌙</span>
-        </button>
     </div>
 </header>

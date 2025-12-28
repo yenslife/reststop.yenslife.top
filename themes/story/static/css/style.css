@@ -471,9 +471,26 @@ html[data-theme='dark'] .theme-toggle .icon-moon {
 }
 
 @media (max-width: 480px) {
+    .site-header .header-container {
+        flex-direction: column;
+        gap: 10px;
+    }
     .site-header .container {
         flex-direction: column;
         gap: 10px;
+    }
+    .site-nav {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .site-nav a {
+        margin-left: 0;
+    }
+    .theme-toggle {
+        margin-left: 0;
     }
     .post-single .post-title {
         font-size: 2em;
