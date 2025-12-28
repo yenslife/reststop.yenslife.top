@@ -1,6 +1,6 @@
 baseURL = 'https://stories.yenslife.top/'
 languageCode = 'zh-TW'
-title = '海狸大師說故事'
+title = '狸開地球前的休息站'
 theme = 'story'
 hasCJKLanguage = true
 
@@ -9,5 +9,5 @@ hasCJKLanguage = true
 
 [params]
   summaryLength = 40
-  description = "在這裡，您可以找到各種溫暖人心的短篇故事。讓文字帶您進入不同的世界."
+  description = "地球是不完美的，但在離開之前，先休息一下吧。"
   ogImage = "/images/beaver-master-story-banner.png"
